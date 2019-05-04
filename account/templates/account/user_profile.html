@@ -1,0 +1,21 @@
+{% extends "account/base.html"%}
+
+{%block title_block%}
+Profile
+{%endblock%}
+
+{% block act_pro_block %}
+active
+{% endblock %}
+
+{%block body_block%}
+<div class="card" style="width: 45rem;">
+  <img class="card-img-top" src="{{ user.user_profile_info.profile_pic.url }}" alt="OOOPs! Somethin is wrong Image cant found">
+  <div class="card-body">
+    <h2 class="card-text">Name-{{ user.username }}</h2>
+    <h3 class="card-text">Email-{{ user.email}}</h3>
+    <p class="card-text">Portfolio Site-<a href="{{ user.user_profile_info.profolio_site }}">{{ user.user_profile_info.profolio_site }}</a></p>
+  </div>
+</div>
+
+{%endblock%}

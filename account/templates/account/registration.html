@@ -1,0 +1,24 @@
+{% extends "account/base.html"%}
+
+{%block title_block%}
+registration
+{%endblock%}
+
+{% block act_reg_block %}
+active
+{% endblock %}
+
+{%block body_block%}
+  {% if registered %}
+        <h1>Thank you for registration. </h1>
+        <h3>Please confirm your email address to complete the registration</h3>
+  {% else %}
+        <h1>Please Insert following data:</h1>
+        <form enctype="multipart/form-data" method="POST">
+          {{ User_Form.as_p }}
+          {{ profile_form.as_p }}
+          {% csrf_token %}
+          <input type="submit" class="btn btn-primary" value="REGISTER">
+        </form>
+  {%endif%}
+{%endblock%}

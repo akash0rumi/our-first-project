@@ -1,0 +1,21 @@
+{% extends "account/base.html"%}
+
+{%block title_block%}
+Login
+{%endblock%}
+
+{% block act_login_block %}
+active
+{% endblock %}
+
+{%block body_block%}
+  <h1>Please Login</h1>
+  <form action="{% url 'account:user_login' %}" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" name="username">
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-success" value="LOGIN">
+  </form>
+{%endblock%}
